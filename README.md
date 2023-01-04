@@ -3,7 +3,7 @@
 
   <h3 align="center">Github User's Repositories</h3>
   <p align="center">
-    <a href="https://hirejob-rhefrz.vercel.app">View Demo</a>
+    <a href="https://list-github-repos-rhefrz.vercel.app">View Demo</a>
   </p>
 </p>
 
