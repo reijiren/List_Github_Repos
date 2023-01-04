@@ -55,9 +55,9 @@ export default function List() {
                             <th scope="col">Name</th>
                             <th scope="col">Language</th>
                             <th scope="col">Visibility</th>
+                            <th scope="col">Description</th>
                             <th scope="col">Date Created</th>
                             <th scope="col">Last Updated</th>
-                            <th scope="col">Description</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -67,9 +67,9 @@ export default function List() {
                                 <td><Link href={e.html_url} passHref><u>{e.name}</u></Link></td>
                                 <td>{e.language || "-"}</td>
                                 <td>{e.visibility}</td>
+                                <td>{e.description || "No description"}</td>
                                 <td>{formatTime(e.created_at)} {formatDate(e.created_at)}</td>
                                 <td>{formatTime(e.updated_at)} {formatDate(e.updated_at)}</td>
-                                <td>{e.description || "No description"}</td>
                             </tr>
                         ))}
                     </tbody>
