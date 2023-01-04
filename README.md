@@ -1,7 +1,8 @@
 <br />
 <p align="center">
 
-  <h3 align="center">Github User's Repositories</h3>
+  <h2 align="center">Github User's Repositories</h2>
+  <h3 align="center">by Muhammad Rhefa Farizi</h3>
   <p align="center">
     <a href="https://list-github-repos-rhefrz.vercel.app">View Demo</a>
   </p>
