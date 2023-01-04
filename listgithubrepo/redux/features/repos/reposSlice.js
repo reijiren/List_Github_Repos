@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
+import { fetchRepositoryAPI } from "./reposAPI";
 
 const initialState = {
     search: "",
@@ -10,8 +10,8 @@ const initialState = {
 
 export const fetchRepository = createAsyncThunk("repos/fetchRepository", async(params, thunkAPI) => {
     try{
-        const result = await axios.get(`https://api.github.com/users/${search}/repos`)
-        return result.data;
+        const res = await fetchRepositoryAPI(params);
+        return res;
     }catch(err){
         return thunkAPI.rejectWithValue(err);
     }
@@ -33,7 +33,7 @@ export const reposSlice = createSlice({
         builder.addCase(fetchRepository.fulfilled, (state, action) => {
             state.isLoading = false;
             state.isError = false;
-            state.repos = action.payload;
+            state.repos = action.payload || [];
         })
         builder.addCase(fetchRepository.rejected, (state) => {
             state.isLoading = false;
