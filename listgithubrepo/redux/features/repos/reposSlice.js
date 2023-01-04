@@ -38,6 +38,7 @@ export const reposSlice = createSlice({
         builder.addCase(fetchRepository.rejected, (state) => {
             state.isLoading = false;
             state.isError = true;
+            state.repos = [];
         })
     }
 })

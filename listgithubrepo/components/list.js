@@ -37,6 +37,10 @@ export default function List() {
         }))
     }, [search, table])
 
+    useEffect(() => {
+        setTable((current) => ({...current, page: 1}));
+    }, [search])
+
     return(
         <div className="p-2">
             {repos.length === 0 ? (
@@ -60,7 +64,7 @@ export default function List() {
                         {repos.map((e, i) => (
                             <tr key={i}>
                                 <th scope="row">{(i + 1)}</th>
-                                <td><Link href={e.html_url}><u>{e.name}</u></Link></td>
+                                <td><Link href={e.html_url} passHref><u>{e.name}</u></Link></td>
                                 <td>{e.language || "-"}</td>
                                 <td>{e.visibility}</td>
                                 <td>{formatTime(e.created_at)} {formatDate(e.created_at)}</td>
@@ -74,7 +78,7 @@ export default function List() {
             <div className="d-flex flex-row gap-3 align-items-center">
                 <button className="btn btn-primary" onClick={handlePrev} disabled={table.page <= 1}>Prev</button>
                 <p>{table.page}</p>
-                <button className="btn btn-primary" onClick={handleNext} disabled={repos.length === 0}>Next</button>
+                <button className="btn btn-primary" onClick={handleNext} disabled={repos.length === 0 || repos.length !== table.per_page}>Next</button>
             </div>
         </div>
     )
