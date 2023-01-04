@@ -35,7 +35,7 @@ export default function List() {
             search,
             ...table
         }))
-    }, [search, table])
+    }, [search, table, dispatch])
 
     useEffect(() => {
         setTable((current) => ({...current, page: 1}));

@@ -28,7 +28,7 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <h1>LIST OF GITHUB USER REPOSITORIES</h1>
-        <h4>Search: "{search}"</h4>
+        <h4>Search: &quot;{search}&quot;</h4>
         <form onSubmit={handleSearch}>
           <div className="d-flex flex-row align-items-center gap-2">
             <p>Search:</p>
