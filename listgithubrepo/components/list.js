@@ -63,7 +63,7 @@ export default function List() {
                     <tbody>
                         {repos.map((e, i) => (
                             <tr key={i}>
-                                <th scope="row">{(i + 1)}</th>
+                                <th scope="row">{(table.page * table.per_page) + (i + 1)}</th>
                                 <td><Link href={e.html_url} passHref><u>{e.name}</u></Link></td>
                                 <td>{e.language || "-"}</td>
                                 <td>{e.visibility}</td>
